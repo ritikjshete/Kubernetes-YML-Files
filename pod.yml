@@ -1,0 +1,22 @@
+kind: Namespace
+apiVersion: v1
+metadata: 
+  name: namespace-2
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-1
+  namespace: namespace-2
+spec:
+  containers:
+    - name: cont-1
+      image: nginx
+      ports:
+      - containerPort: 80
+
+    - name: cont-2
+      image: ubuntu
+      command: ["sleep", "3600"]
