@@ -1,0 +1,20 @@
+metadata:
+  name: my-namespace
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  namespace: my-namespace
+  name: multi-container-pod
+spec:
+  containers:
+    - name: ubuntu-container
+      image: ubuntu
+      command: ["/bin/bash", "-c", "sleep infinity"]
+
+    - name: nginx-container
+      image: nginx
+      ports:
+        - containerPort: 80
