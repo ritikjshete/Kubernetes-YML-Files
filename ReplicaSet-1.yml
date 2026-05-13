@@ -19,8 +19,8 @@ spec:
     metadata:
       name: pod
       labels:
-        app: devops
-   
+        app: frontend
+
     spec:
       containers:
         - name: nginx-container
